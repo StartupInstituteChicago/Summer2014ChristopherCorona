@@ -8,12 +8,6 @@
 # * Each verse should be separate by a single blank line.
 # * Make sure pluralization is correct once you get down to 1 bottle of beer, and no more bottles of beer.
 
-# Work on this today, and I'll send out one possible solution (complete with tests - yay!) tomorrow.  At
-# least try to get the code working before taking a look at the solution, even if it's not the most elegant \
-# code - code that needs refactoring but works is better than clean code that does not work.  That's what
-# refactoring is for, and we'll talk more about that when we dive into testing in preparation for Lab 3.
-
-
 def grammarize(count)
 	#pluralize for all numbers 0 to 99 except 1
 	if count == 1
