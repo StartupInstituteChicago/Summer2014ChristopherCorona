@@ -6,6 +6,10 @@ group :development, :test do
   gem 'rspec-rails', '2.99'
 end
 
+gem 'capybara'
+gem 'factory_girl'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postresql as the database for Active Record
