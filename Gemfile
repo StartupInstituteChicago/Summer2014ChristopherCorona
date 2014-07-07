@@ -6,6 +6,7 @@ group :development, :test do
   gem 'rspec-rails', '2.99'
 end
 
+gem "bootstrap-sass", "~> 3.1.0"
 gem 'capybara'
 gem 'factory_girl'
 
