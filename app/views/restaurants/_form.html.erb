@@ -1,0 +1,39 @@
+<div class = 'well'>
+  <%= form_for @restaurant do |f| %>
+    
+    <div class = 'control group'>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class = 'control group'>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class = 'control group'>
+      <%= f.label :address %><br>
+      <%= f.text_area :address %>
+    </div>
+
+    <div class = 'control group'>
+      <%= f.label :phone_number %><br>
+      <%= f.text_field :phone_number %>
+    </div>
+  </br>
+    <div class = 'control group'>
+      <%= f.file_field :photo %>
+    </div>
+
+    <div class = 'control group'>
+      <%= f.label :remote_photo_url, "... or Photo URL" =%><br>
+      <%= f.text_field :remote_photo_url =%>
+    </div>
+
+    <div class = 'control group'>
+      <%= f.submit(@restaurant.new_record? ? 'Submit Restaurant' : 'Edit Restaurant') %>
+    </div>
+
+  <% end %>
+  <p>
+</div>

@@ -1,3 +1,7 @@
+
+<p><%=image_tag @restaurant.photo_url(:masthead).to_s %></p>
+
+<div class="well">
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -17,6 +21,7 @@
   <strong>Phone number:</strong>
   <%= @restaurant.phone_number %>
 </p>
+</div>
 <p>
 <%= link_to 'Back', restaurants_path %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>

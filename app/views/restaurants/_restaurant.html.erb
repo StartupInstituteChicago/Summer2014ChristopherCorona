@@ -1,0 +1,18 @@
+<div class = "row">
+  <div class ='span0 well text-center'>
+    <%=image_tag restaurant.photo_url(:thumb).to_s %>
+  </div>
+
+
+  <div class='span8 well'>
+    <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+    <small><%= restaurant.address %></small>
+    <p><%= restaurant.description %></p>
+    <p>
+    <span class = 'quiet'>posted by</span>
+    <small>at <%= display_datetime(restaurant.created_at) %></small>
+    </p>
+    <small>
+      <span>
+  </div>
+</div>
