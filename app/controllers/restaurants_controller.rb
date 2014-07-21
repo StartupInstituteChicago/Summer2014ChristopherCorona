@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_action :require_user, except: [:show, :index]
+  before_action :require_creator, only: [:edit, :update]
 
   def index
     @restaurants = Restaurant.all
@@ -11,12 +13,13 @@ class RestaurantsController < ApplicationController
 
 
   def new
-
+    @restaurant = Restaurant.new
   end
 
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
     
     @restaurant.save
     redirect_to @restaurant

@@ -1,6 +1,7 @@
 <div class = 'well'>
   <%= form_for @restaurant do |f| %>
-    
+  <%= render 'shared/errors', obj: @restaurant %>
+
     <div class = 'control group'>
       <%= f.label :name %><br>
       <%= f.text_field :name %>

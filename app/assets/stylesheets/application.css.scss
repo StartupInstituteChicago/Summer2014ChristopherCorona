@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+.column {
+    float: left;
+    margin: 20px;
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
+}
+
+
 #nav {
   width: 100%;
   float: left;

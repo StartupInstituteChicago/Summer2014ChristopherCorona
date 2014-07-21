@@ -9,10 +9,10 @@
 
 def is_leap_year?(year)
   if year%4 == 0 and (year%100 !=0  or year%400==0)
-    return true
+    true
   else
-    return false
+    false
   end
 end
 
-puts is_leap_year?(2000)
+puts is_leap_year?(1982)
