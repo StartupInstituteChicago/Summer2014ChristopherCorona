@@ -2,6 +2,15 @@
   <li><%= link_to 'Our Restaurants', root_path %></li>
   <% if logged_in? %>
     <li><%= link_to 'New Restaurant', new_restaurant_path %></li>
+      <li>  <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+    Categories <span class = 'caret'></span>
+    <% end %>
+    <ul class = 'dropdown-menu'>
+      <% Category.all.each do |category| %>
+        <li>
+          <%= link_to category.name, category_path(category)%>
+      <% end %>
+    </ul>
     <li><%= link_to 'Log Out', logout_path %></li>
   <% end %>
   <% unless logged_in? %>

@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
     access_denied unless logged_in? and (current_user.admin? or current_user == @restaurant.user)
   end
 
+  def require_admin
+    access_denied unless logged_in? and current_user.admin?
+  end
+
   def access_denied
     flash[:error] = "You can't do that."
     redirect_to root_path

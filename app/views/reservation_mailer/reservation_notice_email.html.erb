@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>You have a new reservation, <%= @reservation.user.username %>:</h1>
+      <em><%=@reservation.requested_date_time %></em><br>
+      <em><%=@reservation.email %></em><br>
+      <em><%=@reservation.message %></em><br>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<% header = link_to('All Restaurants', restaurants_path) + " &raquo;  #{@category.name}".html_safe %>
+<%= render 'shared/content_title', title: header %>
+
+<% @category.restaurants.each do |restaurant| %>
+  <%= render 'restaurants/restaurant', restaurant:restaurant %>
+<% end %>

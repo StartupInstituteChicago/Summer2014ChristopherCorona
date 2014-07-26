@@ -1,4 +1,39 @@
+<% if logged_in? and (current_user.admin? or current_user == @restaurant.user) %>
+  <%@restaurant.reload.reservations.each do |reservation| %>
+    <div class="well span4">
+      <em><%=reservation.requested_date_time %></em><br>
+      <em><%=reservation.email %></em><br>
+      <em><%=reservation.message %></em><br>
+      <%= link_to 'Delete', restaurant_reservation_path(reservation.restaurant, reservation), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </div>
+  <% end %>
+<% end %>
 
+
+<% if logged_in? and current_user == @restaurant.user%>
+  <h4>Make a FREE Reservation</h4>
+  <%= form_for [@restaurant, @reservation] do |f| %>
+  <%= render 'shared/errors', obj: @reservation %>
+
+      <div class = 'control group'>
+        <%= f.datetime_select :requested_date_time, class: "reservation_requested_date_time", label: "Please pick a day and time" %>
+      </div>
+
+      <div class = 'control group'>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class = 'control group'>
+        <%= f.label :message %><br>
+        <%= f.text_field :message %>
+      </div>
+
+      <%= f.submit "Make Reservation", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<br>
 <p><%=image_tag @restaurant.photo_url(:masthead).to_s %></p>
 
 <div class="well">

@@ -3,6 +3,7 @@
         <%=image_tag restaurant.photo_url(:thumb).to_s %>
   </div>
   <div class = "column">
+        <%= render restaurant.categories %>
         <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
         <small><%= restaurant.address %></small>
         <p><%= restaurant.description %></p>

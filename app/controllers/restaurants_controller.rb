@@ -4,11 +4,13 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
   end
 
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reservation = Reservation.new
   end
 
 
@@ -51,7 +53,7 @@ class RestaurantsController < ApplicationController
 
   private
     def restaurant_params
-      params.require(:restaurant).permit(:name, :description, :address, :phone_number, :photo, :remote_photo_url)
+      params.require(:restaurant).permit(:name, :description, :address, :phone_number, :photo, :remote_photo_url, category_ids: [])
     end
 
 end
